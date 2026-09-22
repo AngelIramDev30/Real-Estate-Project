@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 1.5rem 1rem;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    background: #f1f5f9;
+    color: #0f172a;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+main {
+    padding: 2rem 1rem;
+}
+
+#formulario {
+    width: min(100%, 48rem);
+    margin-inline: auto;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem 1rem;
+    padding: 1.25rem 1.5rem 1.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    box-shadow: 0 0.5rem 1.5rem rgb(15 23 42 / 10%);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+.campo {
+    display: grid;
+    gap: 0.25rem;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input, textarea, select, button {
+    font: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid #94a3b8;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    color: #0f172a;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 5rem;
+}
+
+input:focus, textarea:focus-visible, select:focus-visible, button:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+}
+
+.campo:nth-of-type(7),
+.campo:nth-of-type(9),
+button[type="submit"] {
+    grid-column: 1 / -1;
+}
+
+.campo:nth-of-type(7) {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.campo:nth-of-type(7) > span {
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.campo:nth-of-type(7) label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: 400;
+}
+
+.campo:nth-of-type(7) input {
+    width: auto;
+}
+
+button {
+    min-height: 44px;
+    padding: 0.55rem 1rem;
+    cursor: pointer;
+    color: #ffffff;
+    border: 0;
+    border-radius: 0.35rem;
+    background: #2563eb;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.btn-toggle {
+    display: block;
+    margin: 1.5rem auto 0;
+}
+
+body.dark-mode {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+body.dark-mode fieldset {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 40%);
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="tel"],
+body.dark-mode input[type="password"],
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: #0f172a;
+    color: #f8fafc;
+    border-color: #475569;
+}
+
+body.dark-mode ::placeholder {
+    color: #94a3b8;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding: 0.75rem;
+    }
+    fieldset {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    .campo:nth-of-type(7),
+    .campo:nth-of-type(9),
+    button[type="submit"] {
+        grid-column: auto;
+    }
+}
