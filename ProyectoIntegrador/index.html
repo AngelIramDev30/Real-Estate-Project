@@ -1,12 +1,110 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shark Estate</title>
+    
+    <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
-    <title>Real Estate Hub | Property Management</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
+    <div class="background-container"></div>
+    
+    <header class="navbar">
+        <div class="logo">
+            <svg viewBox="0 0 100 100" width="50" height="50">
+                <path d="M10 50 L50 20 L90 50 L90 90 L10 90 Z" fill="transparent" stroke="#a855f7" stroke-width="5"/>
+                <path d="M50 80 Q 40 40 70 30 Q 60 70 50 80" fill="#a855f7" />
+            </svg>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="#" class="active">Inicio</a>
+            <a href="#">Compra</a>
+            <a href="#">Venta</a>
+            <a href="#">Renta</a>
+        </nav>
+        
+        <div class="user-profile">
+            <button class="btn-login">Iniciar Sesión</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Tipo" class="search-input">
+                <input type="text" placeholder="Localidad" class="search-input">
+                <input type="text" placeholder="Precio min" class="search-input">
+                <input type="text" placeholder="Precio max" class="search-input">
+            </div>
+        </section>
+
+        <section class="featured-section">
+            <h2>Destacados de San Carlos, Sonora</h2>
+            <div class="cards-container" id="properties-container">
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <p class="price">$$$$$$</p>
+                        <p class="location">Ubicacion</p>
+                        <button class="btn-info">Mas informacion</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <p class="price">$$$$$$</p>
+                        <p class="location">Ubicacion</p>
+                        <button class="btn-info">Mas informacion</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <p class="price">$$$$$$</p>
+                        <p class="location">Ubicacion</p>
+                        <button class="btn-info">Mas informacion</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <p class="price">$$$$$$</p>
+                        <p class="location">Ubicacion</p>
+                        <button class="btn-info">Mas informacion</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <p class="price">$$$$$$</p>
+                        <p class="location">Ubicacion</p>
+                        <button class="btn-info">Mas informacion</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <p class="price">$$$$$$</p>
+                        <p class="location">Ubicacion</p>
+                        <button class="btn-info">Mas informacion</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2>Ubicacion en Mapa</h2>
+            <div id="map"></div>
+        </section>
+    </main>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
