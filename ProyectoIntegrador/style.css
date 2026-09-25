@@ -132,7 +132,6 @@ main {
     overflow-x: auto;
     padding-bottom: 20px;
     scrollbar-width: none; 
-    /* Centrar las tarjetas dentro de su contenedor si sobran espacios */
     justify-content: center;
 }
 .cards-container::-webkit-scrollbar {
@@ -164,7 +163,7 @@ main {
     flex-direction: column;
     gap: 5px;
     padding: 5px;
-    flex-grow: 1; /* Esto hace que el contenido ocupe todo el espacio disponible */
+    flex-grow: 1; 
 }
 
 .price {
@@ -186,7 +185,7 @@ main {
     cursor: pointer;
     font-size: 0.85rem;
     font-weight: 600;
-    margin-top: auto; /* Esto empuja el botón siempre hasta el fondo */
+    margin-top: auto; 
     transition: all 0.3s;
 }
 
@@ -215,4 +214,124 @@ main {
     border: 1px solid rgba(255, 255, 255, 0.1);
     background-color: #1a1a1a;
     z-index: 1;
+}
+
+
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000; 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #1a1525;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #a855f7;
+}
+
+#modal-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+.modal-slider {
+    position: relative;
+    width: 100%;
+    line-height: 0; 
+    touch-action: pan-y; 
+}
+
+.modal-slider #modal-img {
+    display: block;
+    margin-bottom: 0;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(11, 9, 20, 0.6);
+    color: white;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.slider-btn:hover {
+    background-color: #a855f7;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0 15px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #a855f7;
+}
+
+#modal-title {
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+}
+
+#modal-description {
+    margin-top: 15px;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }

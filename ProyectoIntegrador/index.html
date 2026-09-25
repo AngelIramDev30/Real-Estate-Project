@@ -6,9 +6,6 @@
     <title>Shark Estate</title>
     
     <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
@@ -24,7 +21,6 @@
         
         <nav class="nav-links">
             <a href="#" class="active">Inicio</a>
-            <a href="#">Compra</a>
             <a href="#">Venta</a>
             <a href="#">Renta</a>
         </nav>
@@ -47,54 +43,7 @@
         <section class="featured-section">
             <h2>Destacados de San Carlos, Sonora</h2>
             <div class="cards-container" id="properties-container">
-                <div class="card">
-                    <div class="card-image"></div>
-                    <div class="card-content">
-                        <p class="price">$$$$$$</p>
-                        <p class="location">Ubicacion</p>
-                        <button class="btn-info">Mas informacion</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"></div>
-                    <div class="card-content">
-                        <p class="price">$$$$$$</p>
-                        <p class="location">Ubicacion</p>
-                        <button class="btn-info">Mas informacion</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"></div>
-                    <div class="card-content">
-                        <p class="price">$$$$$$</p>
-                        <p class="location">Ubicacion</p>
-                        <button class="btn-info">Mas informacion</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"></div>
-                    <div class="card-content">
-                        <p class="price">$$$$$$</p>
-                        <p class="location">Ubicacion</p>
-                        <button class="btn-info">Mas informacion</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"></div>
-                    <div class="card-content">
-                        <p class="price">$$$$$$</p>
-                        <p class="location">Ubicacion</p>
-                        <button class="btn-info">Mas informacion</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"></div>
-                    <div class="card-content">
-                        <p class="price">$$$$$$</p>
-                        <p class="location">Ubicacion</p>
-                        <button class="btn-info">Mas informacion</button>
-                    </div>
-                </div>
+                <p style="color:white; padding: 20px;">Conectando con la API y cargando propiedades...</p>
             </div>
         </section>
 
@@ -103,7 +52,23 @@
             <div id="map"></div>
         </section>
     </main>
-    
+
+    <div id="property-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <div class="modal-slider">
+                <button class="slider-btn prev-btn" onclick="cambiarImagen(-1)">&#10094;</button>
+                <img id="modal-img" src="" alt="Foto">
+                <button class="slider-btn next-btn" onclick="cambiarImagen(1)">&#10095;</button>
+            </div>
+            <div class="slider-dots" id="slider-dots"></div>
+            <h3 id="modal-title">Titulo</h3>
+            <p id="modal-price" class="price"></p>
+            <p id="modal-location" class="location"></p>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="app.js"></script>
 </body>
